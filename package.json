@@ -1,12 +1,9 @@
 {
   "scripts": {
     "clean": "rimraf dist",
-    "jest": "jest",
-    "build/esbuild": "rimraf dist && esbuild --bundle --minify ./src/app.ts --outfile=./dist/app.js --tsconfig=./tsconfig.build.json",
-    "build/tsc": "rimraf dist && tsc -p ./tsconfig.build.json",
-    "watch/esbuild": "npm run build/esbuild -- --watch",
-    "watch/tsc": "npm run build/tsc -- --watch",
-    "watch/jest": "npm run jest -- --watch",
+    "test": "jest",
+    "build": "rimraf dist && esbuild --bundle --minify ./src/app.ts --outfile=./dist/app.js --tsconfig=./tsconfig.build.json --platform=node",
+    "watch": "npm run build/esbuild -- --watch",
     "coverage": "npm run jest -- --coverage --verbose"
   },
   "devDependencies": {
